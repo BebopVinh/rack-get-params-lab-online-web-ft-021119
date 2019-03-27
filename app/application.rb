@@ -11,10 +11,10 @@ class Application
       @@items.each do |item|
         resp.write "#{item}\n"
       end
-    elsif req.path.match(/search/)
-      search_term = req.params["q"]
+    elsif @req.path.match(/search/)
+      search_term = @req.params["q"]
       resp.write handle_search(search_term)
-    elsif req.path.match(/cart/)
+    elsif @req.path.match(/cart/)
       handle_cart
     elsif req.path.match(/add/)
       handle_add
