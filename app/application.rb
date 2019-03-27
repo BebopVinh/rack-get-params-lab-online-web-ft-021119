@@ -37,7 +37,7 @@ class Application
     if @@cart.empty?
       @resp.write "Your cart is empty"
     else
-    @@cart.each {|item| resp.write "#{item}\n"}
+    @@cart.each {|item| @resp.write "#{item}\n"}
     end
   end
 
@@ -45,9 +45,9 @@ class Application
     search_term = @req.params["item"]
     if @@items.include?(search_term)
       @@cart << search_term
-      resp.write "added #{search_term}"
+      @resp.write "added #{search_term}"
     else
-      resp.write "We don't have that item"
+      @resp.write "We don't have that item"
     end
   end
 end
