@@ -48,5 +48,6 @@ class Application
       resp.write "added #{search_term}"
     else
       resp.write "We don't have that item"
+    end
   end
 end
