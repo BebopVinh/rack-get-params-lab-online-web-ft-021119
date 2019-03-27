@@ -16,7 +16,7 @@ class Application
       resp.write handle_search(search_term)
     elsif @req.path.match(/cart/)
       handle_cart
-    elsif req.path.match(/add/)
+    elsif @req.path.match(/add/)
       handle_add
     else
       resp.write "Path Not Found"
